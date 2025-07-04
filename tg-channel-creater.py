@@ -12,7 +12,7 @@ group_title = f"{tour_name} {date}"
 
 async def main():
   await client.start()
-  # cоздание форум-группы
+  
   result = await client(CreateChannelRequest(
     title=group_title,
     about="Группа тура",
