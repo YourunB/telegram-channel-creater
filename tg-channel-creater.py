@@ -32,10 +32,10 @@ async def main():
 
   for topic in topics:
     await client(CreateForumTopicRequest(
-        channel=group.id,
-        title=topic
+      channel=group.id,
+      title=topic
     ))
 
 with client:
-    client.loop.run_until_complete(main())
+  client.loop.run_until_complete(main())
 
