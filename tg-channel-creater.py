@@ -1,9 +1,13 @@
 import sys
+import os
+from dotenv import load_dotenv
 from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import CreateChannelRequest, CreateForumTopicRequest
 
-api_id = 11111111
-api_hash = '11111111aaaaaaaaaaaa'
+load_dotenv()
+
+api_id = int(os.getenv('TG_API_ID'))
+api_hash = os.getenv('TG_API_HASH')
 
 client = TelegramClient('session_name', api_id, api_hash)
 
@@ -49,4 +53,4 @@ async def main():
     ))
 
 with client:
-    client.loop.run_until_complete(main())
+  client.loop.run_until_complete(main())
